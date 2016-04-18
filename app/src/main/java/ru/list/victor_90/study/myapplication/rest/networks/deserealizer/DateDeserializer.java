@@ -1,4 +1,4 @@
-package ru.list.victor_90.study.myapplication;
+package ru.list.victor_90.study.myapplication.rest.networks.deserealizer;
 
 
 import com.google.gson.JsonDeserializationContext;
@@ -10,6 +10,8 @@ import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+
+import ru.list.victor_90.study.myapplication.rest.constants.Constants;
 
 public class DateDeserializer implements JsonDeserializer<java.util.Date> {
 

@@ -1,4 +1,4 @@
-package ru.list.victor_90.study.myapplication;
+package ru.list.victor_90.study.myapplication.rest.models;
 
 
 import com.google.gson.annotations.SerializedName;

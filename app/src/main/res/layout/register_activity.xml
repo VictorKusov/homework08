@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_email"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="textEmailAddress"
+        android:layout_marginRight="34dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginTop="38dp"
+        android:minWidth="170dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_btn_reg"
+        android:id="@+id/btn_reg"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="123dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_txt_cancel"
+        android:id="@+id/btn_back"
+        android:layout_alignTop="@+id/btn_reg"
+        android:layout_alignRight="@+id/ed_email" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_login"
+        android:layout_below="@+id/ed_email"
+        android:layout_alignRight="@+id/ed_email"
+        android:layout_alignEnd="@+id/ed_email"
+        android:layout_alignLeft="@+id/ed_email"
+        android:layout_alignStart="@+id/ed_email" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/ed_pass"
+        android:layout_below="@+id/ed_name"
+        android:layout_alignLeft="@+id/ed_login"
+        android:layout_alignStart="@+id/ed_login"
+        android:layout_alignRight="@+id/ed_login"
+        android:layout_alignEnd="@+id/ed_login" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/txt_email"
+        android:id="@+id/textView"
+        android:layout_alignLeft="@+id/btn_reg"
+        android:layout_alignStart="@+id/btn_reg"
+        android:layout_alignTop="@+id/ed_email"
+        android:layout_above="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/txt_log"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/ed_email"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignBottom="@+id/ed_login" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/txt_pass"
+        android:id="@+id/textView3"
+        android:layout_alignBottom="@+id/ed_pass"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name"
+        android:layout_alignBottom="@+id/ed_name"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_name"
+        android:layout_below="@+id/ed_login"
+        android:layout_alignRight="@+id/ed_login"
+        android:layout_alignEnd="@+id/ed_login"
+        android:layout_alignLeft="@+id/ed_pass"
+        android:layout_alignStart="@+id/ed_pass" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pb_bar_reg"
+        android:layout_alignTop="@+id/btn_reg"
+        android:layout_toRightOf="@+id/btn_reg"
+        android:layout_toEndOf="@+id/btn_reg"
+        android:visibility="gone"/>
+
+</RelativeLayout>

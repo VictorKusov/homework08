@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ru.list.victor_90.study.myapplication.MainActivity">
+    tools:context=".rest.ui.activities.MainActivity">
 
     <EditText
         android:layout_width="wrap_content"
@@ -37,4 +37,22 @@
         android:layout_below="@+id/txt_pass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="52dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_btn_reg"
+        android:id="@+id/btn_register"
+        android:layout_below="@+id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="87dp" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pb_bar"
+        android:layout_above="@+id/btn_register"
+        android:layout_alignRight="@+id/txt_pass"
+        android:layout_alignEnd="@+id/txt_pass"
+        android:visibility="gone"/>
 </RelativeLayout>

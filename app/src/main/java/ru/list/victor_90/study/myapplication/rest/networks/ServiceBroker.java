@@ -1,4 +1,4 @@
-package ru.list.victor_90.study.myapplication;
+package ru.list.victor_90.study.myapplication.rest.networks;
 
 
 import android.util.Log;
@@ -19,6 +19,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import ru.list.victor_90.study.myapplication.rest.models.RegisterRequest;
+import ru.list.victor_90.study.myapplication.rest.networks.deserealizer.DateDeserializer;
+import ru.list.victor_90.study.myapplication.rest.networks.interceptors.HttpLoggingInterceptor;
+import ru.list.victor_90.study.myapplication.rest.networks.api.IBaasApi;
+import ru.list.victor_90.study.myapplication.rest.networks.listeners.LoginCallback;
+import ru.list.victor_90.study.myapplication.rest.constants.Constants;
+import ru.list.victor_90.study.myapplication.rest.models.LoginRequest;
+import ru.list.victor_90.study.myapplication.rest.models.Users;
+import ru.list.victor_90.study.myapplication.rest.networks.listeners.RegisterCallback;
 
 public class ServiceBroker {
 
@@ -103,8 +112,36 @@ public class ServiceBroker {
         });
     }
 
-    public void register(){
+    public void register(RegisterRequest registerRequest, final RegisterCallback callback){
 
+        IBaasApi baasApi = getRetrofit().create(IBaasApi.class);
+        Call<Users> call = baasApi.register(registerRequest);
+
+        call.enqueue(new Callback<Users>() {
+            @Override
+            public void onResponse(Call<Users> call, Response<Users> response) {
+                Users user = response.body();
+                if(response.isSuccessful() && user != null) {
+                    //ВСЕ ОТЛИЧНО
+                    Log.d(TAG, "all OK = " + user.toString());
+                    callback.response(false);
+                } else {
+                    // ОШИБКА ЗАПРОСА
+                    try {
+                        Log.d(TAG, "error response code = " + response.code());
+                        Log.d(TAG, "error response body = " + response.errorBody().string());
+                    } catch (IOException e) {}
+                    callback.response(true);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Users> call, Throwable t) {
+                // ВСЕ СЛОМАЛСЬ - если нет интернета или что то закодили не правильно
+                Log.d(TAG, "ERROR = " + t.toString());
+                callback.response(true);
+            }
+        });
     }
 
 }

@@ -1,4 +1,4 @@
-package ru.list.victor_90.study.myapplication;
+package ru.list.victor_90.study.myapplication.rest.models;
 
 public class LoginRequest {
     private String login;
